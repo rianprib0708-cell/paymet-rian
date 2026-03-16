@@ -190,10 +190,13 @@
   <!-- TOAST -->
   <div id="toast"></div>
 
-<!-- AUTO MUSIC -->
-  <audio id="bg-music" autoplay loop hidden>
-    <source src="https://files.catbox.moe/8rcucf.mp3" type="audio/mpeg" />
-  </audio>
+<!-- MANUAL MUSIC -->
+  <audio id="lagu">
+  <source src="https://files.catbox.moe/8rcucf.mp3" type="audio/mpeg">
+</audio>
+
+<button onclick="document.getElementById('lagu').play()">▶ Putar</button>
+<button onclick="document.getElementById('lagu').pause()">⏸ Stop</button>
   
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
