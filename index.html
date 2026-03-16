@@ -200,11 +200,49 @@
 
 <!-- MANUAL MUSIC -->
   <audio id="lagu">
-  <source src="https://files.catbox.moe/8rcucf.mp3" type="audio/mpeg">
+  <source src="<a href="https://ibb.co.com/XkjdDzcm"><img src="https://i.ibb.co.com/vvVrhJ02/quality-restoration-20260313005016106.jpg" alt="quality-restoration-20260313005016106" border="0"></a><br /><a target='_blank' href='https://id.imgbb.com/'>upload foto cepat</a><br />" type="audio/mpeg">
 </audio>
 
-<button onclick="document.getElementById('lagu').play()">▶ Putar</button>
-<button onclick="document.getElementById('lagu').pause()">⏸ Stop</button>
+<img id="coverMusic" 
+src="https://i.imgur.com/4M34hi2.png" 
+onclick="toggleMusic()">
+
+<style>
+#coverMusic{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+.spin{
+  animation: putar 3s linear infinite;
+}
+
+@keyframes putar{
+  from{transform: rotate(0deg);}
+  to{transform: rotate(360deg);}
+}
+</style>
+
+<script>
+var lagu = document.getElementById("lagu");
+var cover = document.getElementById("coverMusic");
+
+function toggleMusic(){
+  if(lagu.paused){
+    lagu.play();
+    cover.classList.add("spin");
+  }else{
+    lagu.pause();
+    cover.classList.remove("spin");
+  }
+}
+</script>
   
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
